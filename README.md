@@ -4,7 +4,7 @@ Creates a new Rails API pre-configured for JSON API and OAuth 2 authentication:
 
 - Configures [JSONAPI::Resources](http://jsonapi-resources.com/) for [JSON API](http://jsonapi.org/)
 - Configures [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper) for OAuth 2 authentication
-- Creates a User model with `has_password` for password storage
+- Creates a User model with [`has_secure_password`](https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html#method-i-has_secure_password) for password storage
 - Sets up a `POST /users` endpoint for registration
 - Configures [factory_bot](https://github.com/thoughtbot/factory_bot) factories for User and access tokens to make request specs easy
 - Passes the `current_user` to JSONAPI::Resources
@@ -17,7 +17,7 @@ Also includes the following setup:
 - Uses [RSpec](http://rspec.info/) instead of Minitest
 - Uses [pry](https://github.com/pry/pry) instead of byebug
 - Disables authenticity token
-- Enables CORS
+- Enables [CORS](https://github.com/cyu/rack-cors)
 - Adds:
   - [Bullet](https://github.com/flyerhzm/bullet)
   - [Dotenv](https://github.com/bkeepers/dotenv)
