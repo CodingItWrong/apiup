@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+basedir = File.expand_path('..', File.dirname(__FILE__))
+project_name = ARGV[0]
+
+command = "rails new --rc=#{basedir}/rc --template=#{basedir}/template.rb #{project_name}"
+puts command
+exec command

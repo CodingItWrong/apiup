@@ -1,0 +1,33 @@
+# https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+AllCops:
+  TargetRubyVersion: 2.3
+
+  # Don't check binstubs or gemfile
+  Exclude:
+    - 'bin/**/*'
+    - 'Gemfile'
+
+# Don't restrict length of modules/files
+Metrics/ModuleLength:
+  Enabled: false
+
+# Allow braces for blocks that mainly return a value, including RSpec lets and
+# subjects
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+
+# Don't require a class comment
+Style/Documentation:
+  Enabled: false
+
+# Don't require thousand separators
+Style/NumericLiterals:
+  Enabled: false
+
+# Require trailing commas for multiline arrays/hashes
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+# Allow but do not require modifier usage of if/unless
+Style/IfUnlessModifier:
+  Enabled: false
