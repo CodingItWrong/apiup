@@ -102,7 +102,7 @@ commit 'Configure CORS'
 copy_file '../files/bin/sample-data', 'bin'
 commit 'Add sample data script'
 
-copy_file 'Dockerfile', '.'
+copy_file '../files/Dockerfile', '.'
 copy_file '../files/bin/docker-start', 'bin'
 commit 'Configure docker'
 
