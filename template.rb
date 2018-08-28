@@ -74,6 +74,7 @@ run 'rails generate rspec:install'
 commit 'Set up RSpec'
 
 run 'rails generate model user email:string:uniq password_digest:string'
+copy_file '../files/db/seeds.rb', 'db'
 copy_file '../files/app/models/user.rb', 'app/models'
 copy_file '../files/spec/factories/user.rb', 'spec/factories'
 remove_file 'spec/models/user_spec.rb'
@@ -105,6 +106,11 @@ commit 'Add sample data script'
 copy_file '../files/Dockerfile', '.'
 copy_file '../files/bin/docker-start', 'bin'
 commit 'Configure docker'
+
+run 'rails db:create:all'
+run 'rails db:migrate'
+run 'rails db:seed'
+commit 'Set up database'
 
 # TODO: clean up gem file
 # TODO: Ruby version in gemfile?
