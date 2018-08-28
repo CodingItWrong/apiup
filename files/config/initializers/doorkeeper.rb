@@ -5,10 +5,8 @@ Doorkeeper.configure do
   grant_flows %w[password]
 
   resource_owner_from_credentials do
-    user = User.find_for_database_authentication(email: params[:username])
-    if user && user.valid_for_authentication? { user.valid_password?(params[:password]) }
-      user
-    end
+    User.find_by(email: params[:username])
+       &.authenticate(params[:password])
   end
 
   # This block will be called to check whether the resource owner is authenticated or not.
