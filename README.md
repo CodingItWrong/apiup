@@ -1,4 +1,4 @@
-# API Template
+# Rails API Template
 
 Creates a new Rails API pre-configured for JSON API and OAuth 2 authentication:
 
