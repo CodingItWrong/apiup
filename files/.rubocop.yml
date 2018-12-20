@@ -12,6 +12,7 @@ AllCops:
     - 'Gemfile'
     - 'Rakefile'
     - 'spec/*_helper.rb'
+    - 'vendor/**/*'
 
 Layout/EmptyLineAfterMagicComment:
   Enabled: false
@@ -29,7 +30,7 @@ Style/Documentation:
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: comma
 
-# Require trailing commas for multiline arrays
+# Require trailing commas for multiline hashes
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
 
@@ -37,5 +38,24 @@ Style/TrailingCommaInHashLiteral:
 Style/IfUnlessModifier:
   Enabled: false
 
+# Default Rails files have comment lines this long
 Metrics/LineLength:
-  Max: 100
+  Max: 120
+
+# This is the style I saw in the Ruby world
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+# Allow *%i[…]
+Lint/UnneededSplatExpansion:
+  Enabled: false
+Lint/AmbiguousOperator:
+  Enabled: false
+
+# The examples I see always use stabby lambdas
+Style/Lambda:
+  Enabled: false
+
+# casecmp().zero? is less readable, so I don't want to enforce it unless performance requires it
+Performance/Casecmp:
+  Enabled: false
