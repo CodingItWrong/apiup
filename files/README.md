@@ -50,7 +50,7 @@ get '/widgets', headers: headers
 ### Running
 
 ```sh
-$ bin/rails server
+$ rails server
 ```
 
 [postgres-app]: http://postgresapp.com
