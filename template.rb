@@ -23,6 +23,8 @@ run %(sed -i '' "s/\\[APP NAME\\]/#{app_path.titleize}/" README.md)
 commit 'Use markdown readme'
 
 copy_file '../files/.rubocop.yml'
+copy_file '../files/spec/.rubocop.yml', 'spec'
+copy_file '../files/spec/factories/.rubocop.yml', 'spec/factories'
 commit 'Add rubocop code style config'
 
 run "sed -i '' '/^.*#/ d' Gemfile"
