@@ -21,7 +21,6 @@ Also includes the following setup:
 - Adds:
   - [Bullet](https://github.com/flyerhzm/bullet)
   - [Dotenv](https://github.com/bkeepers/dotenv)
-  - [factory_bot](https://github.com/thoughtbot/factory_bot)
   - [Faker](https://github.com/stympy/faker)
   - [Rack-Attack](https://github.com/kickstarter/rack-attack)
 - Provides a `Dockerfile` in case you want to run in Docker
