@@ -12,7 +12,8 @@ This is a short description of your app.
 ### Setup
 
 ```sh
-$ bin/bootstrap
+$ bundle install
+$ rails db:setup
 ```
 
 ### Development
