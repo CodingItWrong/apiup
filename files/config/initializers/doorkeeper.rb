@@ -5,8 +5,12 @@ Doorkeeper.configure do
   grant_flows %w[password]
 
   resource_owner_from_credentials do
-    User.find_by(email: params[:username])
-       &.authenticate(params[:password])
+    user = User.find_by(email: params[:username])
+    if user&.authenticate(params[:password])
+      user
+    else
+      raise Doorkeeper::Errors::DoorkeeperError.new('invalid_user_or_password')
+    end
   end
 
   # This block will be called to check whether the resource owner is authenticated or not.

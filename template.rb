@@ -86,6 +86,7 @@ run 'rails generate doorkeeper:install'
 run 'rails generate doorkeeper:migration'
 # TODO: add foreign key to user
 copy_file '../files/config/initializers/doorkeeper.rb', 'config/initializers'
+copy_file '../files/config/locales/doorkeeper.en.yml', 'config/locales'
 copy_file '../files/spec/factories/access_token.rb', 'spec/factories'
 commit 'Configure doorkeeper'
 
