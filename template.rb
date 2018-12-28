@@ -53,12 +53,14 @@ gem_group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'coderay'
+  gem 'rubocop'
 end
 
 commit 'Add development gems'
 
 gem_group :test do
   gem 'factory_bot_rails'
+  gem 'rspec_junit_formatter'
 end
 
 commit 'Add test gems'
@@ -105,6 +107,9 @@ commit 'Configure CORS'
 
 copy_file '../files/bin/sample-data', 'bin'
 commit 'Add sample data script'
+
+copy_file '../files/.circleci', '.circleci'
+commit 'Configure CircleCI'
 
 copy_file '../files/Dockerfile', '.'
 copy_file '../files/bin/docker-start', 'bin'
