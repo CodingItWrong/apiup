@@ -108,7 +108,7 @@ commit 'Configure CORS'
 copy_file '../files/bin/sample-data', 'bin'
 commit 'Add sample data script'
 
-copy_file '../files/.circleci', '.circleci'
+copy_file '../files/.circleci/config.yml', '.circleci'
 commit 'Configure CircleCI'
 
 copy_file '../files/Dockerfile', '.'
