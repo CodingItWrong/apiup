@@ -3,17 +3,17 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/ruby:2.6.0-node-browsers
+      - image: circleci/ruby:2.5.3-node-browsers
         environment:
           PGHOST: 127.0.0.1
-          PGUSER: biblereading
+          PGUSER: appname
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       - image: circleci/postgres:9.5
         environment:
-          POSTGRES_USER: biblereading
+          POSTGRES_USER: appname
 
     working_directory: ~/repo
 
