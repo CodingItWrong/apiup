@@ -1,4 +1,4 @@
-# Rails API Template
+# apiup
 
 Creates a new Rails API pre-configured for JSON API and OAuth 2 authentication:
 
