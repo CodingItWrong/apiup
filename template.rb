@@ -116,7 +116,7 @@ copy_file '../files/Dockerfile', '.'
 copy_file '../files/bin/docker-start', 'bin'
 commit 'Configure docker'
 
-run 'rails db:create:all'
+run 'rails db:create'
 run 'rails db:migrate'
 run 'rails db:seed'
 commit 'Set up database'
