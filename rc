@@ -3,7 +3,6 @@
 --skip-active-storage
 --skip-bootsnap
 --skip-bundle
---skip-keeps
 --skip-spring
 --skip-test
 --database=postgresql
