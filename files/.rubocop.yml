@@ -1,6 +1,6 @@
 # https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.6
 
   # Don't check binstubs or gemfile
   Exclude:
@@ -9,6 +9,7 @@ AllCops:
     - 'config.ru'
     - 'db/migrate/*'
     - 'db/schema.rb'
+    - 'node_modules/**/*'
     - 'Gemfile'
     - 'Rakefile'
     - 'spec/*_helper.rb'
@@ -17,13 +18,20 @@ AllCops:
 Layout/EmptyLineAfterMagicComment:
   Enabled: false
 
-# Allow braces for blocks that mainly return a value, including RSpec lets and
-# subjects
+Layout/IndentArray:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
 Style/BlockDelimiters:
-  EnforcedStyle: semantic
+  Enabled: false
 
 # Don't require a class comment
 Style/Documentation:
+  Enabled: false
+
+Style/GuardClause:
   Enabled: false
 
 # Require trailing commas for multiline arrays
@@ -32,7 +40,7 @@ Style/TrailingCommaInArrayLiteral:
 
 # Require trailing commas for multiline hashes
 Style/TrailingCommaInHashLiteral:
-  EnforcedStyleForMultiline: comma
+  Enabled: false
 
 # Require trailing commas for multiline argument lists
 Style/TrailingCommaInArguments:
@@ -44,11 +52,7 @@ Style/IfUnlessModifier:
 
 # Default Rails files have comment lines this long
 Metrics/LineLength:
-  Max: 120
-
-# This is the style I saw in the Ruby world
-Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
+  Enabled: false
 
 # Allow *%i[…]
 Lint/UnneededSplatExpansion:
@@ -63,10 +67,6 @@ Style/Lambda:
 # casecmp().zero? is less readable, so I don't want to enforce it unless performance requires it
 Performance/Casecmp:
   Enabled: false
-
-# Single line {}, multiline do…end
-Style/BlockDelimiters:
-  EnforcedStyle: line_count_based
 
 Layout/EmptyLineAfterGuardClause:
   Enabled: false

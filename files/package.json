@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "lint": "prettier --check '{app,lib,spec}/**/*.rb'",
+    "format": "prettier --write '{app,lib,spec}/**/*.rb'"
+  },
+  "devDependencies": {
+    "@prettier/plugin-ruby": "^0.12.0",
+    "prettier": "^1.17.0"
+  }
+}

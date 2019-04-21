@@ -3,17 +3,17 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/ruby:2.6.1-node-browsers
+      - image: circleci/ruby:2.6.2-node-browsers
         environment:
           PGHOST: 127.0.0.1
-          PGUSER: appname
+          PGUSER: biblereading
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       - image: circleci/postgres:9.5
         environment:
-          POSTGRES_USER: appname
+          POSTGRES_USER: biblereading
 
     working_directory: ~/repo
 
@@ -23,7 +23,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
@@ -31,11 +31,15 @@ jobs:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
+            sudo npm install -g yarn
+            sudo chmod +x /usr/local/bin/yarn
+            sudo yarn install
 
       - save_cache:
           paths:
+            - ./node_modules
             - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
 
       # Database setup
       - run: bundle exec rails db:create
@@ -48,6 +52,8 @@ jobs:
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
 
+            yarn lint
+            bundle exec rubocop
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
