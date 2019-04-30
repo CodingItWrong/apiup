@@ -18,7 +18,7 @@ AllCops:
 Layout/EmptyLineAfterMagicComment:
   Enabled: false
 
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   Enabled: false
 
 Layout/SpaceInsideHashLiteralBraces:
@@ -62,10 +62,6 @@ Lint/AmbiguousOperator:
 
 # The examples I see always use stabby lambdas
 Style/Lambda:
-  Enabled: false
-
-# casecmp().zero? is less readable, so I don't want to enforce it unless performance requires it
-Performance/Casecmp:
   Enabled: false
 
 Layout/EmptyLineAfterGuardClause:
