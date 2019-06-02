@@ -1,3 +1,0 @@
-{
-  "addTrailingCommas": true
-}
