@@ -27,6 +27,10 @@ copy_file '../files/spec/.rubocop.yml', 'spec'
 copy_file '../files/spec/factories/.rubocop.yml', 'spec/factories'
 commit 'Add rubocop code style config'
 
+copy_file '../files/.prettierrc.js'
+copy_file '../files/package.json'
+commit 'Add Prettier-Ruby for code formatting'
+
 run "sed -i '' '/^.*#/ d' Gemfile"
 commit 'Remove Gemfile comments'
 
