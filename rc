@@ -1,5 +1,6 @@
 --api
 --skip-action-cable
+--skip-action-mailbox
 --skip-active-storage
 --skip-bootsnap
 --skip-bundle
