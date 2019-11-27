@@ -55,7 +55,7 @@ Metrics/LineLength:
   Enabled: false
 
 # Allow *%i[…]
-Lint/UnneededSplatExpansion:
+Lint/RedundantSplatExpansion:
   Enabled: false
 Lint/AmbiguousOperator:
   Enabled: false
