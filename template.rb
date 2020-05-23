@@ -106,6 +106,10 @@ copy_file '../files/config/routes.rb', 'config'
 copy_file '../files/spec/requests/register_spec.rb', 'spec/requests'
 commit 'Expose user create endpoint'
 
+copy_file '../files/spec/rails_helper.rb', 'spec'
+copy_file '../files/spec/support/with_a_logged_in_user.rb', 'spec/support'
+commit 'Add shared context for setting up a logged in user'
+
 copy_file '../files/config/initializers/cors.rb', 'config/initializers'
 commit 'Configure CORS'
 
