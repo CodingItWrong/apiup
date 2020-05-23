@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require_relative '../config/environment'
+
+if Rails.env != "development"
+  puts "Rails environment is #{Rails.env}; not gonna truncate THAT!"
+  exit false
+end
+
+# `db:seed` is for actual production reference data
+# this file is for sample dev data
+# you may want to `destroy_all` first so it's idempotent
