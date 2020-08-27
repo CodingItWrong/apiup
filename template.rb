@@ -115,10 +115,6 @@ commit 'Add sample data script'
 copy_file '../files/.circleci/config.yml', '.circleci'
 commit 'Configure CircleCI'
 
-copy_file '../files/Dockerfile', '.'
-copy_file '../files/bin/docker-start', 'bin'
-commit 'Configure docker'
-
 run 'rails db:create'
 run 'rails db:migrate'
 run 'rails db:seed'
