@@ -3,6 +3,7 @@
 basedir = File.expand_path('..', File.dirname(__FILE__))
 project_name = ARGV[0]
 
-command = "rails new --rc=#{basedir}/rc --template=#{basedir}/template.rb #{project_name}"
+# lock version to 6.0.x due to JR
+command = "rails _6.0.3.4_ new --rc=#{basedir}/rc --template=#{basedir}/template.rb #{project_name}"
 puts command
 exec command
