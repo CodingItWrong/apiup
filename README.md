@@ -23,7 +23,6 @@ Also includes the following setup:
   - [Dotenv](https://github.com/bkeepers/dotenv)
   - [Faker](https://github.com/stympy/faker)
   - [Rack-Attack](https://github.com/kickstarter/rack-attack)
-- Provides a `Dockerfile` in case you want to run in Docker
 
 To learn more, see ["Authorizing jsonapi_resources"](https://www.bignerdranch.com/blog/authorizing-jsonapi-resources-part-1-visibility/).
 
