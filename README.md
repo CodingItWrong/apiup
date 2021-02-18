@@ -18,6 +18,7 @@ Also includes the following setup:
 - Uses [pry](https://github.com/pry/pry) instead of byebug
 - Disables authenticity token
 - Enables [CORS](https://github.com/cyu/rack-cors)
+- Configures a CircleCI configuration file for continuous integration
 - Adds:
   - [Bullet](https://github.com/flyerhzm/bullet)
   - [Dotenv](https://github.com/bkeepers/dotenv)
