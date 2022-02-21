@@ -4,6 +4,5 @@
 --skip-active-storage
 --skip-bootsnap
 --skip-bundle
---skip-spring
 --skip-test
 --database=postgresql
