@@ -86,7 +86,10 @@ commit 'Add user model'
 
 run 'rails generate doorkeeper:install'
 run 'rails generate doorkeeper:migration'
-# TODO: add foreign key to user
+
+# TODO: match variable number of spaces
+run "sed -i '' 's/t.references :application,    null: false/t.references :application/' db/migrate/*_create_doorkeeper_tables.rb"
+
 copy_file '../files/config/initializers/doorkeeper.rb', 'config/initializers'
 copy_file '../files/config/locales/doorkeeper.en.yml', 'config/locales'
 copy_file '../files/spec/factories/access_token.rb', 'spec/factories'
