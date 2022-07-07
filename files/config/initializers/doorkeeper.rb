@@ -4,6 +4,9 @@ Doorkeeper.configure do
 
   grant_flows %w[password]
 
+  # see https://github.com/doorkeeper-gem/doorkeeper/issues/561#issuecomment-612857163
+  skip_client_authentication_for_password_grant true
+
   resource_owner_from_credentials do
     user = User.find_by(email: params[:username])
     if user&.authenticate(params[:password])
