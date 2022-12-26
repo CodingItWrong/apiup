@@ -30,9 +30,6 @@ commit 'Add rubocop code style config'
 run "sed -i '' '/^.*#/ d' Gemfile"
 commit 'Remove Gemfile comments'
 
-run "sed -i '' '/byebug/ d' Gemfile"
-run "sed -i '' '/coffee-rails/ d' Gemfile"
-run "sed -i '' '/jbuilder/ d' Gemfile"
 run "sed -i '' '/tzinfo-data/ d' Gemfile"
 commit 'Remove unused gems'
 
