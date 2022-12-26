@@ -68,6 +68,19 @@ commit 'Add production gems'
 run 'bundle install'
 commit 'Bundle gems'
 
+# https://github.com/doorkeeper-gem/doorkeeper/issues/1577
+copy_file '../files/config/initializers/doorkeeper.rb', 'config/initializers'
+run 'rails generate doorkeeper:install -f'
+run 'rails generate doorkeeper:migration'
+
+# TODO: match variable number of spaces
+run "sed -i '' 's/t.references :application,    null: false/t.references :application/' db/migrate/*_create_doorkeeper_tables.rb"
+
+copy_file '../files/config/initializers/doorkeeper.rb', 'config/initializers'
+copy_file '../files/config/locales/doorkeeper.en.yml', 'config/locales'
+copy_file '../files/spec/factories/access_token.rb', 'spec/factories'
+commit 'Configure doorkeeper'
+
 run 'bundle binstubs bundler --force'
 run 'bundle binstubs rspec-core'
 run 'rails generate rspec:install'
@@ -79,17 +92,6 @@ copy_file '../files/app/models/user.rb', 'app/models'
 copy_file '../files/spec/factories/user.rb', 'spec/factories'
 remove_file 'spec/models/user_spec.rb'
 commit 'Add user model'
-
-run 'rails generate doorkeeper:install'
-run 'rails generate doorkeeper:migration'
-
-# TODO: match variable number of spaces
-run "sed -i '' 's/t.references :application,    null: false/t.references :application/' db/migrate/*_create_doorkeeper_tables.rb"
-
-copy_file '../files/config/initializers/doorkeeper.rb', 'config/initializers'
-copy_file '../files/config/locales/doorkeeper.en.yml', 'config/locales'
-copy_file '../files/spec/factories/access_token.rb', 'spec/factories'
-commit 'Configure doorkeeper'
 
 copy_file '../files/app/controllers/application_controller.rb', 'app/controllers'
 copy_file '../files/app/resources/application_resource.rb', 'app/resources'
