@@ -46,7 +46,6 @@ gem_group :development do
 end
 
 gem_group :development, :test do
-  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'coderay'
   gem 'rubocop'
