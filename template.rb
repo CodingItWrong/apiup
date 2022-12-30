@@ -116,6 +116,9 @@ run 'rails db:migrate'
 run 'rails db:seed'
 commit 'Set up database'
 
+copy_file '../files/.irbrc', '.irbrc'
+commit 'Disable console autocomplete'
+
 run 'bundle exec standardrb --fix'
 commit 'Format to Standard'
 
