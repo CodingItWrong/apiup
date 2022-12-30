@@ -22,11 +22,6 @@ copy_file '../files/README.md'
 run %(sed -i '' "s/\\[APP NAME\\]/#{app_path.titleize}/" README.md)
 commit 'Use markdown readme'
 
-copy_file '../files/.rubocop.yml'
-copy_file '../files/spec/.rubocop.yml', 'spec'
-copy_file '../files/spec/factories/.rubocop.yml', 'spec/factories'
-commit 'Add rubocop code style config'
-
 run "sed -i '' '/^.*#/ d' Gemfile"
 commit 'Remove Gemfile comments'
 
@@ -48,7 +43,7 @@ end
 gem_group :development, :test do
   gem 'rspec-rails'
   gem 'coderay'
-  gem 'rubocop'
+  gem 'standard'
 end
 
 commit 'Add development gems'
@@ -120,6 +115,9 @@ run 'rails db:create'
 run 'rails db:migrate'
 run 'rails db:seed'
 commit 'Set up database'
+
+run 'bundle exec standardrb --fix'
+commit 'Format to Standard'
 
 # TODO: clean up gem file
 # TODO: Ruby version in gemfile?
