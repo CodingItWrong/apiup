@@ -12,10 +12,9 @@ Creates a new Rails API pre-configured for JSON API and OAuth 2 authentication:
 Also includes the following setup:
 
 - Enables Rails API mode
-- Removes Action Cable, Active Storage, Bootsnap, JBuilder, Spring, and Turbolinks
+- Removes Action Cable, Active Storage, and Bootsnap
 - Uses Postgres instead of SQLite
 - Uses [RSpec](http://rspec.info/) instead of Minitest
-- Uses [pry](https://github.com/pry/pry) instead of byebug
 - Disables authenticity token
 - Enables [CORS](https://github.com/cyu/rack-cors)
 - Configures a CircleCI configuration file for continuous integration
