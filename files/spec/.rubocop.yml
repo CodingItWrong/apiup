@@ -1,8 +1,0 @@
-inherit_from: ../.rubocop.yml
-
-Metrics/BlockLength:
-  Enabled: false
-
-# Return values like let()s {}, no return value do…end
-Style/BlockDelimiters:
-  EnforcedStyle: semantic

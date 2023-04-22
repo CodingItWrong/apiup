@@ -1,5 +1,0 @@
-inherit_from: ../../.rubocop.yml
-
-# allows single-line sequence blocks with curlies
-Style/BlockDelimiters:
-  Enabled: false
