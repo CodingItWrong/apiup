@@ -12,7 +12,7 @@ Doorkeeper.configure do
     if user&.authenticate(params[:password])
       user
     else
-      raise Doorkeeper::Errors::DoorkeeperError.new('invalid_user_or_password')
+      raise Doorkeeper::Errors::DoorkeeperError.new("invalid_user_or_password")
     end
   end
 
